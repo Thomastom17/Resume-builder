@@ -94,7 +94,7 @@ const router = createBrowserRouter(
       element: <RecruiterProfile />
     },
     {
-      path: "/Resume-builder/candidate/profile",
+      path: "/Resume-builder/candidate/candidate/profile",
       element: <CandidateProfile />,
     },
   ],

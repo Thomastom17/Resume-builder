@@ -1,430 +1,826 @@
 /* =====================================================
-   PARENT CONTAINER & LAYOUT
+   Reset & Base Styles
 ===================================================== */
-
-.recruiter-profile-container {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+ 
+body {
+    background: #F8FAFC;
+}
+ 
+/* =====================================================
+   Main Page Layout & Header
+===================================================== */
+.recruiter-page {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 2rem;
-    box-sizing: border-box;
+    padding: 24px 0 40px;
     background: #F8FAFC;
 }
-
-.recruiter-profile-wrapper {
+ 
+.recruiter-page-header {
     width: 100%;
-    max-width: 1150px;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 24px;
-    margin: 0 auto;
-}
-
-/* =====================================================
-   CARDS BASE STYLING (FIGMA EXACT DIMENSIONS)
-===================================================== */
-
-.recent-activity-card {
-    width: 337px;
-    height: auto;
-    min-height: auto;
-    background: #FFFFFF;
-    border: 1px solid #C7C7C7;
-    border-radius: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    padding: 18px 18px 18px 16px;
-}
-
-.security-card,
-.documents-card {
-    width: 336px;
-    height: auto;
-    min-height: auto;
-    background: #FFFFFF;
-    border: 1px solid #C7C7C7;
-    border-radius: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    padding: 18px;
-}
-
-/* =====================================================
-   TITLES
-===================================================== */
-
-.recent-activity-title,
-.security-title,
-.documents-title {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 24px;
-    color: #111827;
-}
-
-/* =====================================================
-   DOCUMENTS CARD
-===================================================== */
-
-.documents-list {
-    display: flex;
-    flex-direction: column;
-    margin-top: 18px;
-    flex: 1;
-    gap: 10px;
-}
-
-.document-item {
-    display: flex;
-    align-items: center;
-    min-height: 72px;
-}
-
-.document-left {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    width: 100%;
-}
-
-.document-icon-box {
-    width: 52px;
-    height: 52px;
-    border-radius: 12px;
-    background: #F5F8FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.document-icon {
-    width: 28px;
-    height: 28px;
-    object-fit: contain;
-}
-
-.document-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    min-width: 0;
-}
-
-.document-info h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    color: #1F2937;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.document-info span {
-    margin-top: 4px;
-    padding: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 18px;
-    color: #6B7280;
-}
-
-.document-item:hover .document-info h4 {
-    color: #2563EB;
-    transition: .25s ease;
-}
-
-.document-item:hover .document-icon-box {
-    background: #EAF2FF;
-    transition: .25s ease;
-}
-
-/* =====================================================
-   RECENT ACTIVITY CARD
-===================================================== */
-
-.recent-activity-content {
-    position: relative;
-    flex: 1;
-    display: flex;
-    margin-top: 18px;
-}
-
-.timeline-wrapper {
-    width: 26px;
-    flex-shrink: 0;
-}
-
-.activity-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    margin-left: 6px;
-}
-
-.activity-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.activity-item:not(:last-child) {
-    margin-bottom: 16px;
-}
-
-.activity-header {
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-}
-
-.timeline-dot {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    left: -28px;
-    top: 3px;
-    object-fit: contain;
-}
-
-.activity-header h4 {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 19px;
-    color: #1F2937;
-    max-width: 250px;
-}
-
-.activity-item p {
-    margin: 4px 0 0 0;
-    padding-left: 0;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 17px;
-    color: #8A8A8A;
-}
-
-.activity-item:last-child {
-    margin-bottom: 0;
-}
-
-.activity-item:hover h4 {
-    color: #2563EB;
-    transition: .25s ease;
-}
-
-/* =====================================================
-   SECURITY & ACCOUNT SETTINGS CARD
-===================================================== */
-
-.security-list {
-    margin-top: 18px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.security-item {
+    max-width: 1057px;
+    margin: 0 auto 24px;
+    padding: 0 16px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    min-height: 46px;
+    align-items: flex-end;
+    box-sizing: border-box;
 }
-
-.security-item:not(:last-child) {
-    margin-bottom: 10px;
-}
-
-.security-left {
+ 
+.header-left {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
-    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
 }
-
-.security-icon {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    flex-shrink: 0;
+ 
+.header-left h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #111827;
+    letter-spacing: -0.2px;
 }
-
-.security-text {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    color: #1F2937;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.security-right {
+ 
+.breadcrumb-nav {
+    font-size: 13px;
+    color: #6B7280;
     display: flex;
     align-items: center;
     gap: 6px;
-    flex-shrink: 0;
 }
-
-.enabled-badge {
-    width: 66px;
-    height: auto;
-    object-fit: contain;
+ 
+.breadcrumb-nav .separator {
+    color: #9CA3AF;
 }
-
-.active-device-text {
-    font-size: 13px;
-    font-weight: 500;
-    color: #2563EB;
-    white-space: nowrap;
+ 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-
-.arrow-icon {
+ 
+.btn-change-password,
+.btn-edit-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    line-height: 20px;
+}
+ 
+.header-btn-icon {
     width: 16px;
     height: 16px;
     object-fit: contain;
     flex-shrink: 0;
 }
 
-.security-item:hover .security-text {
+.btn-change-password {
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    color: #374151;
+}
+ 
+.btn-change-password:hover {
+    background: #F3F4F6;
+}
+ 
+.btn-edit-profile {
+    background: #2563EB;
+    border: 1px solid #2563EB;
+    color: #FFFFFF;
+}
+ 
+.btn-edit-profile:hover {
+    background: #1D4ED8;
+}
+ 
+/* =====================================================
+   Dashboard Grid Container (Desktop >768px)
+===================================================== */
+.recruiter-profile-container {
+    width: 100%;
+    max-width: 1057px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 263px 394px 352px;
+    grid-template-areas:
+        "profile company professional"
+        "activity security documents";
+    column-gap: 24px;
+    row-gap: 24px;
+    justify-content: center;
+    align-items: start;
+    box-sizing: border-box;
+    padding: 0 16px;
+}
+ 
+.profile-card { grid-area: profile; width: 100%; }
+.company-card { grid-area: company; width: 100%; }
+.professional-card { grid-area: professional; width: 100%; }
+.recent-activity-card { grid-area: activity; width: 100%; height: 332px; }
+.security-card { grid-area: security; width: 100%; height: 332px; }
+.documents-card { grid-area: documents; width: 100%; height: 332px; }
+ 
+.recruiter-profile-wrapper { display: contents; }
+ 
+/* =====================================================
+   Common Card Styling
+===================================================== */
+.profile-card,
+.company-card,
+.professional-card,
+.recent-activity-card,
+.security-card,
+.documents-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(15, 23, 42, 0.05);
+    transition: .3s;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+ 
+.profile-card:hover,
+.company-card:hover,
+.professional-card:hover,
+.recent-activity-card:hover,
+.security-card:hover,
+.documents-card:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+ 
+/* =====================================================
+   Profile Card
+===================================================== */
+.profile-card {
+    height: 437px;
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+ 
+.status {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    height: 28px;
+    padding: 0 12px;
+    border-radius: 7px;
+    background: #ECFDF3;
+    color: #16A34A;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #A7F3D0;
+}
+
+.status-icon {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+}
+ 
+.profile-image {
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #EEF4FF;
+    margin: 8px auto 12px;
+}
+
+.profile-name-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.profile-name-row h2 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.verified-icon {
+    width: 14px;
+    height: 14px;
+    object-fit: contain;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+ 
+.designation {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+ 
+.company {
+    font-size: 12px;
+    font-weight: 500;
+    color: #4B5563;
+    margin-bottom: 12px;
+}
+ 
+.recruiter-id {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #2563EB;
+    border-radius: 8px;
+    background: #EEF4FF;
+    color: #2563EB;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+ 
+.recruiter-id:hover {
+    background: #2563EB;
+    color: #FFF;
+}
+ 
+.profile-card hr {
+    border: none;
+    border-top: 1px solid #E5E7EB;
+    margin: 12px 0;
+}
+ 
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+ 
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+ 
+.contact-item img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+ 
+.contact-item a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+}
+ 
+.contact-item a:hover { text-decoration: underline; }
+ 
+/* =====================================================
+   Company Card
+===================================================== */
+.company-card {
+    height: 437px;
+    padding: 24px;
+}
+
+.company-card h3 {
+    margin: 0 0 22px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    color: #111827;
+}
+
+.company-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+.company-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: #FFFFFF;
+}
+
+.company-logo-image {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-top: 80px;
+}
+
+.company-details {
+    flex: 1;
+}
+
+.company-details h2 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #111827;
+}
+
+.company-details p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #374151;
+}
+
+.company-details strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.company-details a {
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.company-details a:hover {
+    text-decoration: underline;
+}
+
+.company-card hr {
+    border: 0;
+    border-top: 1px solid #E5E7EB;
+    margin: 22px 0;
+}
+
+.about-company h4 {
+    margin: 0 0 12px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #111827;
+}
+
+.about-company p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 22px;
+    color: #374151;
+}
+ 
+/* =====================================================
+   Professional Card
+===================================================== */
+.professional-card {
+    height: 437px;
+    padding: 24px;
+}
+ 
+.professional-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+ 
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+}
+ 
+.info-row span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+ 
+.info-row strong {
+    font-size: 13px;
+    color: #111827;
+    font-weight: 600;
+}
+ 
+.domain-title {
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+}
+ 
+.domain-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+ 
+.domain-tags span {
+    padding: 4px 10px;
+    background: #EEF4FF;
+    color: #2563EB;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+ 
+.location {
+    margin-top: 16px;
+}
+ 
+.location h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+}
+ 
+.location p {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    line-height: 1.5;
+}
+ 
+/* =====================================================
+   Row 2 Cards
+===================================================== */
+.recent-activity-card {
+    overflow: hidden;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+ 
+.recent-activity-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #111827;
+}
+ 
+.recent-activity-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    margin-top: 0;
+}
+ 
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    width: 100%;
+}
+ 
+.activity-item {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.activity-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+ 
+.timeline-dot {
+    width: 8px;
+    height: 8px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background: #2563EB;
+    flex-shrink: 0;
+}
+ 
+.activity-header h4 {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #1F2937;
+    max-width: 250px;
+}
+ 
+.activity-item p {
+    font-size: 12px;
+    color: #6B7280;
+    margin-left: 16px;
+    margin-top: 4px;
+    line-height: 15px;
+}
+ 
+/* Security Card */
+.security-card{
+    overflow:hidden;
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+}
+
+.security-title{
+    font-size:18px;
+    font-weight:700;
+    line-height:28px;
+    color:#111827;
+    margin:0;
+}
+
+.security-list{
+    display:flex;
+    flex-direction:column;
+    margin-top:18px;
+    flex:1;
+}
+
+.security-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:52px;
+    border-bottom:1px solid #F1F5F9;
+}
+
+.security-item:last-child{
+    border-bottom:none;
+}
+
+.security-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex:1;
+    min-width:0;
+}
+
+.security-icon{
+    width:18px;
+    height:18px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+
+.security-text{
+    font-size:15px;
+    font-weight:500;
+    line-height:22px;
+    color:#111827;
+}
+
+.security-right{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-left:auto;
+}
+
+.enabled-badge{
+    width:64px;
+    height:24px;
+    object-fit:contain;
+}
+
+.active-device-text{
+    font-size:14px;
+    font-weight:500;
+    line-height:20px;
+    color:#2563EB;
+    white-space:nowrap;
+}
+
+.arrow-icon{
+    width:15px;
+    height:15px;
+    object-fit:contain;
+    flex-shrink:0;
+}
+ 
+/* Documents Card */
+.documents-card {
+    overflow: hidden;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 18px 20px;
+}
+ 
+.documents-title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #111827;
+    margin-bottom:14px;
+}
+ 
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 16px;
+    flex: 1;
+}
+ 
+.document-item {
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+ 
+.document-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+ 
+.document-icon-box {
+    width: 44px;
+    height: 40px;
+    border-radius: 10px;
+    background: #F5F8FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+ 
+.document-icon{
+    width:35px;
+    height:35px;
+    object-fit:contain;
+}
+ 
+.document-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+ 
+.document-info h4 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+    color: #1F2937;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+.document-info span {
+    font-size: 11px;
+    color: #6B7280;
+    margin-top: 2px;
+}
+
+.recent-activity-card,
+.security-card,
+.documents-card{
+    min-height:410px;
+}
+ 
+/* =====================================================
+   Hover Effects
+===================================================== */
+.document-item:hover .document-info h4,
+.security-item:hover .security-text,
+.activity-item:hover h4 {
     color: #2563EB;
     transition: .25s ease;
 }
-
+ 
+.document-item:hover .document-icon-box {
+    background: #EAF2FF;
+    transition: .25s ease;
+}
+ 
 .security-item:hover .arrow-icon {
     transform: translateX(2px);
     transition: .25s ease;
 }
-
-.security-right .arrow-icon {
-    margin-left: 2px;
-}
-
+ 
 /* =====================================================
-   RESPONSIVE DESIGN (BREAKPOINTS IMPLEMENTATION)
+   Responsive Mobile & Tablet Behaviour (Up to 768px)
 ===================================================== */
-
-/* 1. MOBILE BREAKPOINT (320px to 767px): Vertical Stack, Full-Width Centered */
-@media screen and (max-width: 767px) {
-    .recruiter-profile-container {
-        padding: 16px;
+@media screen and (max-width: 768px) {
+    .recruiter-page {
+        padding: 20px 16px;
     }
 
-    .recruiter-profile-wrapper {
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .recent-activity-card {
+    .recruiter-page-header {
         width: 100%;
-        max-width: 337px;
-        min-height: auto;
-        height: auto;
+        max-width: 394px;
+        padding: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 24px;
     }
 
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .recruiter-profile-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        width: 100%;
+        max-width: 394px;
+        padding: 0;
+    }
+
+    .profile-card,
+    .company-card,
+    .professional-card,
+    .recent-activity-card,
     .security-card,
     .documents-card {
         width: 100%;
-        max-width: 336px;
-        min-height: auto;
+        max-width: 394px;
         height: auto;
     }
 
-    .security-item {
-        gap: 8px;
+    .company-content {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 18px;
     }
 
-    .security-text {
-        font-size: 13px;
-        white-space: normal;
+    .company-logo-image {
+        margin-top: 8px;
     }
 
-    .active-device-text {
-        font-size: 12px;
+    .info-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 
 /* =====================================================
-   TABLET (768px - 1023px)
+   Extra Small Mobile (Up to 480px)
 ===================================================== */
-
-@media screen and (min-width:768px) and (max-width:1023px){
-
-    .recruiter-profile-container{
-        padding:32px 20px;
+@media screen and (max-width: 480px) {
+    .header-actions {
+        width: 100%;
+        display: flex;
+        gap: 12px;
     }
 
-    .recruiter-profile-wrapper{
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:flex-start;
-        gap:24px;
-        width:100%;
-        max-width:768px;
-        margin:0 auto;
+    .btn-change-password,
+    .btn-edit-profile {
+        flex: 1;
+        height: 44px;
+        padding: 0 12px;
+        font-size: 14px;
+        justify-content: center;
     }
 
-    .recent-activity-card{
-        width:337px;
-        height:auto;
-        min-height:auto;
+    .header-btn-icon {
+        width: 15px;
+        height: 15px;
     }
-
-    .security-card,
-    .documents-card{
-        width:336px;
-        height:auto;
-        min-height:auto;
-    }
-
-}
-
-/* =====================================================
-   DESKTOP (1024px and above)
-===================================================== */
-
-@media screen and (min-width:1024px){
-
-    .recruiter-profile-wrapper{
-        display:flex;
-        justify-content:center;
-        align-items:stretch;   /* Important */
-        gap:24px;
-    }
-
-    .recent-activity-card{
-        width:337px;
-        display:flex;
-        flex-direction:column;
-        flex:0 0 337px;
-    }
-
-    .security-card,
-    .documents-card{
-        width:336px;
-        display:flex;
-        flex-direction:column;
-        flex:0 0 336px;
-    }
-
 }
