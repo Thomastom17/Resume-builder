@@ -1,0 +1,430 @@
+/* =====================================================
+   PARENT CONTAINER & LAYOUT
+===================================================== */
+
+.recruiter-profile-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    background: #F8FAFC;
+}
+
+.recruiter-profile-wrapper {
+    width: 100%;
+    max-width: 1150px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 24px;
+    margin: 0 auto;
+}
+
+/* =====================================================
+   CARDS BASE STYLING (FIGMA EXACT DIMENSIONS)
+===================================================== */
+
+.recent-activity-card {
+    width: 337px;
+    height: auto;
+    min-height: auto;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 18px 18px 18px 16px;
+}
+
+.security-card,
+.documents-card {
+    width: 336px;
+    height: auto;
+    min-height: auto;
+    background: #FFFFFF;
+    border: 1px solid #C7C7C7;
+    border-radius: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 18px;
+}
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+.recent-activity-title,
+.security-title,
+.documents-title {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #111827;
+}
+
+/* =====================================================
+   DOCUMENTS CARD
+===================================================== */
+
+.documents-list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+    flex: 1;
+    gap: 10px;
+}
+
+.document-item {
+    display: flex;
+    align-items: center;
+    min-height: 72px;
+}
+
+.document-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+}
+
+.document-icon-box {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #F5F8FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.document-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.document-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+}
+
+.document-info h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #1F2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.document-info span {
+    margin-top: 4px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #6B7280;
+}
+
+.document-item:hover .document-info h4 {
+    color: #2563EB;
+    transition: .25s ease;
+}
+
+.document-item:hover .document-icon-box {
+    background: #EAF2FF;
+    transition: .25s ease;
+}
+
+/* =====================================================
+   RECENT ACTIVITY CARD
+===================================================== */
+
+.recent-activity-content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    margin-top: 18px;
+}
+
+.timeline-wrapper {
+    width: 26px;
+    flex-shrink: 0;
+}
+
+.activity-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
+}
+
+.activity-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.activity-header {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    left: -28px;
+    top: 3px;
+    object-fit: contain;
+}
+
+.activity-header h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 19px;
+    color: #1F2937;
+    max-width: 250px;
+}
+
+.activity-item p {
+    margin: 4px 0 0 0;
+    padding-left: 0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 17px;
+    color: #8A8A8A;
+}
+
+.activity-item:last-child {
+    margin-bottom: 0;
+}
+
+.activity-item:hover h4 {
+    color: #2563EB;
+    transition: .25s ease;
+}
+
+/* =====================================================
+   SECURITY & ACCOUNT SETTINGS CARD
+===================================================== */
+
+.security-list {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.security-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 46px;
+}
+
+.security-item:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.security-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.security-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.security-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #1F2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.security-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+}
+
+.enabled-badge {
+    width: 66px;
+    height: auto;
+    object-fit: contain;
+}
+
+.active-device-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2563EB;
+    white-space: nowrap;
+}
+
+.arrow-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.security-item:hover .security-text {
+    color: #2563EB;
+    transition: .25s ease;
+}
+
+.security-item:hover .arrow-icon {
+    transform: translateX(2px);
+    transition: .25s ease;
+}
+
+.security-right .arrow-icon {
+    margin-left: 2px;
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN (BREAKPOINTS IMPLEMENTATION)
+===================================================== */
+
+/* 1. MOBILE BREAKPOINT (320px to 767px): Vertical Stack, Full-Width Centered */
+@media screen and (max-width: 767px) {
+    .recruiter-profile-container {
+        padding: 16px;
+    }
+
+    .recruiter-profile-wrapper {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .recent-activity-card {
+        width: 100%;
+        max-width: 337px;
+        min-height: auto;
+        height: auto;
+    }
+
+    .security-card,
+    .documents-card {
+        width: 100%;
+        max-width: 336px;
+        min-height: auto;
+        height: auto;
+    }
+
+    .security-item {
+        gap: 8px;
+    }
+
+    .security-text {
+        font-size: 13px;
+        white-space: normal;
+    }
+
+    .active-device-text {
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   TABLET (768px - 1023px)
+===================================================== */
+
+@media screen and (min-width:768px) and (max-width:1023px){
+
+    .recruiter-profile-container{
+        padding:32px 20px;
+    }
+
+    .recruiter-profile-wrapper{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-start;
+        gap:24px;
+        width:100%;
+        max-width:768px;
+        margin:0 auto;
+    }
+
+    .recent-activity-card{
+        width:337px;
+        height:auto;
+        min-height:auto;
+    }
+
+    .security-card,
+    .documents-card{
+        width:336px;
+        height:auto;
+        min-height:auto;
+    }
+
+}
+
+/* =====================================================
+   DESKTOP (1024px and above)
+===================================================== */
+
+@media screen and (min-width:1024px){
+
+    .recruiter-profile-wrapper{
+        display:flex;
+        justify-content:center;
+        align-items:stretch;   /* Important */
+        gap:24px;
+    }
+
+    .recent-activity-card{
+        width:337px;
+        display:flex;
+        flex-direction:column;
+        flex:0 0 337px;
+    }
+
+    .security-card,
+    .documents-card{
+        width:336px;
+        display:flex;
+        flex-direction:column;
+        flex:0 0 336px;
+    }
+
+}
