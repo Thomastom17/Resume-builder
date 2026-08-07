@@ -1327,10 +1327,7 @@ body {
   }
 }
 
-/* ===========================================
-   320px, 375px, 425px MOBILE RESPONSIVE FIXES
-   (NO OVERLAP, STEP BY STEP VERTICAL FLOW, GAUGE FIX)
-=========================================== */
+
 @media (max-width: 480px) {
   .can-dashboard-cards {
     grid-template-columns: 1fr;
@@ -1398,7 +1395,7 @@ body {
     width: 100% !important;
   }
 
-  /* RECENT ACTIVITY & UPCOMING INTERVIEWS STEP BY STEP FLOW */
+
   .can-recent-activity-item {
     flex-direction: column;
     align-items: flex-start;
@@ -1418,7 +1415,6 @@ body {
     margin-left: auto;
   }
 
-  /* PROFILE STATS FLATTENING FOR SMALL PHONES */
   .can-profile-stats {
     flex-direction: column;
     align-items: center;
@@ -1430,4 +1426,5 @@ body {
     height: 1px;
     margin-top: 0;
   }
+  
 }
